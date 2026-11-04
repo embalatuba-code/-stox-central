@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<title>Stox Central — retorno da autorização</title>
+<style>
+  body { font: 16px/1.5 system-ui, Segoe UI, Arial, sans-serif; margin: 0; padding: 24px 16px; background: #f6f7f9; color: #1f2430; }
+  main { max-width: 640px; margin: 0 auto; background: #fff; border: 1px solid #d9dde4; border-radius: 10px; padding: 20px; }
+  h1 { font-size: 1.2rem; margin: 0 0 12px; }
+  pre { background: #eef1f6; border: 1px solid #c9d0db; border-radius: 6px; padding: 12px; white-space: pre-wrap; word-break: break-all; user-select: all; }
+  button { font: inherit; padding: 8px 16px; border-radius: 6px; border: 1px solid #2a5bd7; background: #2a5bd7; color: #fff; cursor: pointer; }
+  .aviso { background: #fff7e0; border: 1px solid #e3c766; border-radius: 6px; padding: 10px 12px; margin-top: 14px; }
+  .erro { background: #fdecec; border: 1px solid #e29a9a; border-radius: 6px; padding: 10px 12px; }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Stox Central — retorno da autorização</h1>
+  <section id="sec-ok" hidden>
+    <p>Autorização recebida. Copie o texto abaixo e cole-o na propriedade <strong>ML_RETORNO</strong> do projeto Apps Script. Depois feche esta página.</p>
+    <pre id="texto"></pre>
+    <p><button id="copiar" type="button">Copiar texto</button> <span id="copiado" hidden>Copiado.</span></p>
+    <div class="aviso"><strong>Atenção:</strong> este texto vale como senha por alguns minutos. Não o envie por e-mail, chat ou mensagem, e não tire foto da tela. Esta página não guarda nem envia nada.</div>
+  </section>
+  <section id="sec-erro" hidden>
+    <div class="erro"><p><strong>A autorização não foi concluída.</strong></p><p id="msg-erro"></p><p>Volte ao Apps Script, gere um novo link e tente de novo.</p></div>
+  </section>
+  <section id="sec-vazio" hidden>
+    <p>Nenhum código de autorização foi recebido. Esta página só deve ser aberta pelo Mercado Livre, ao final da autorização.</p>
+  </section>
+</main>
+<script src="retorno.js"></script>
+</body>
+</html>
